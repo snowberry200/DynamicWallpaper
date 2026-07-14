@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:wallpaper/image_service.dart';
-import 'package:wallpaper/screens/widgets/background_pic.dart';
-import 'package:wallpaper/screens/widgets/button_widget.dart';
+import 'package:wallpaper/services/image_service.dart';
+import 'package:wallpaper/widgets/background_pic.dart';
+import 'package:wallpaper/widgets/button_widget.dart';
 import 'package:wallpaper/services/quote_service.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
     showControls = false;
   }
 
+  // Function to load random quotes
   Future<void> _loadRandomQuote() async {
     setState(() {
       isLoadingQuote = true;
@@ -64,10 +65,12 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  // load new quote
   void _loadNewQuote() {
     _loadRandomQuote();
   }
 
+  //start slide show
   void startSlideshow() {
     timer?.cancel();
     timer = Timer.periodic(Duration(seconds: transitionDuration.toInt()), (
@@ -85,6 +88,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // hide buttons until interacted with
   void _showControlsTemporarily() {
     hideControlsTimer?.cancel();
     // Show controls when user interacts
@@ -142,6 +146,7 @@ class _HomePageState extends State<HomePage> {
     _showControlsTemporarily();
   }
 
+  // change speed ... for progression button
   void changeSpeed(double speed) {
     setState(() {
       transitionDuration = speed;
