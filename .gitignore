@@ -1,4 +1,4 @@
-# Flutter/Dart
+# Flutter
 .dart_tool/
 .pub/
 .pub-cache/
@@ -11,12 +11,32 @@ build/
 *.app
 *.framework
 *.xcarchive
-.DS_Store
+
+# IDE
 .idea/
 .vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Android
 android/.gradle
 android/local.properties
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# iOS
 ios/Flutter/Generated.xcconfig
 ios/Flutter/flutter_export_environment.sh
 ios/Pods/
-pubspec.lock
+ios/Podfile.lock
+
+# Web
+web/
+
+# Test
+coverage/
